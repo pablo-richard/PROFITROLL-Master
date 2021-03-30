@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>methods module &mdash; profitroll 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="test module" href="profitroll.test.html" />
+    <link rel="prev" title="Display module" href="profitroll.display.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> profitroll
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="profitroll.core.html"><code class="docutils literal notranslate"><span class="pre">Core</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profitroll.display.html"><code class="docutils literal notranslate"><span class="pre">Display</span></code> module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">methods</span></code> module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-profitroll.methods.advection_step_3P"><code class="docutils literal notranslate"><span class="pre">advection_step_3P</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-profitroll.methods.end_pop"><code class="docutils literal notranslate"><span class="pre">end_pop</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-profitroll.methods.pseudo_spectral_wind"><code class="docutils literal notranslate"><span class="pre">pseudo_spectral_wind</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-profitroll.methods.same_wind"><code class="docutils literal notranslate"><span class="pre">same_wind</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-profitroll.methods.spectral"><code class="docutils literal notranslate"><span class="pre">spectral</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-profitroll.methods.upstream_interp"><code class="docutils literal notranslate"><span class="pre">upstream_interp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-profitroll.methods.wrap_advection_step_3P"><code class="docutils literal notranslate"><span class="pre">wrap_advection_step_3P</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-profitroll.methods.wrap_wv"><code class="docutils literal notranslate"><span class="pre">wrap_wv</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="profitroll.test.html"><code class="docutils literal notranslate"><span class="pre">test</span></code> module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">profitroll</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">Documentation</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">methods</span></code> module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/profitroll.methods.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="methods-module">
+<h1><code class="docutils literal notranslate"><span class="pre">methods</span></code> module<a class="headerlink" href="#methods-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-profitroll.methods.advection_step_3P">
+<span id="advection-step-3p"></span><h2><code class="docutils literal notranslate"><span class="pre">advection_step_3P</span></code><a class="headerlink" href="#module-profitroll.methods.advection_step_3P" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="profitroll.methods.advection_step_3P.advection_step_3P">
+<code class="sig-prename descclassname">profitroll.methods.advection_step_3P.</code><code class="sig-name descname">advection_step_3P</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alpha_u_minus</span></em>, <em class="sig-param"><span class="n">alpha_v_minus</span></em>, <em class="sig-param"><span class="n">field_minus</span></em>, <em class="sig-param"><span class="n">dt</span></em>, <em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em>, <em class="sig-param"><span class="n">alpha_method</span></em>, <em class="sig-param"><span class="n">order_alpha</span></em>, <em class="sig-param"><span class="n">F_method</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#profitroll.methods.advection_step_3P.advection_step_3P" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-profitroll.methods.end_pop">
+<span id="end-pop"></span><h2><code class="docutils literal notranslate"><span class="pre">end_pop</span></code><a class="headerlink" href="#module-profitroll.methods.end_pop" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="profitroll.methods.end_pop.end_pop">
+<code class="sig-prename descclassname">profitroll.methods.end_pop.</code><code class="sig-name descname">end_pop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">history</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#profitroll.methods.end_pop.end_pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pop the first state of the history</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>history</strong> – Current history of state</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-profitroll.methods.pseudo_spectral_wind">
+<span id="pseudo-spectral-wind"></span><h2><code class="docutils literal notranslate"><span class="pre">pseudo_spectral_wind</span></code><a class="headerlink" href="#module-profitroll.methods.pseudo_spectral_wind" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="profitroll.methods.pseudo_spectral_wind.pseudo_spectral_wind">
+<code class="sig-prename descclassname">profitroll.methods.pseudo_spectral_wind.</code><code class="sig-name descname">pseudo_spectral_wind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">history</span></em>, <em class="sig-param"><span class="n">grid</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">verbose</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#profitroll.methods.pseudo_spectral_wind.pseudo_spectral_wind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap the spectral methods to fit the architecture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>history</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">History</span></code> object) – Current history of state</p></li>
+<li><p><strong>grid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code> object:) – Spatial grid of the simulation</p></li>
+<li><p><strong>params</strong> (<em>dictionary</em>) – Dictionary of usefull parameters</p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>optional</em>) – verbose, defaults to 0</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-profitroll.methods.same_wind">
+<span id="same-wind"></span><h2><code class="docutils literal notranslate"><span class="pre">same_wind</span></code><a class="headerlink" href="#module-profitroll.methods.same_wind" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="profitroll.methods.same_wind.same_wind">
+<code class="sig-prename descclassname">profitroll.methods.same_wind.</code><code class="sig-name descname">same_wind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">history</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#profitroll.methods.same_wind.same_wind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the tropopause wind at their previous values for the new state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>history</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">History</span></code> object) – Current history of state</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-profitroll.methods.spectral">
+<span id="spectral"></span><h2><code class="docutils literal notranslate"><span class="pre">spectral</span></code><a class="headerlink" href="#module-profitroll.methods.spectral" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="profitroll.methods.spectral.geostwind">
+<code class="sig-prename descclassname">profitroll.methods.spectral.</code><code class="sig-name descname">geostwind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">thetatp</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">fourier</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#profitroll.methods.spectral.geostwind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="profitroll.methods.spectral.vertwind">
+<code class="sig-prename descclassname">profitroll.methods.spectral.</code><code class="sig-name descname">vertwind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">thetatp</span></em>, <em class="sig-param"><span class="n">thetatpprev</span></em>, <em class="sig-param"><span class="n">dt</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#profitroll.methods.spectral.vertwind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-profitroll.methods.upstream_interp">
+<span id="upstream-interp"></span><h2><code class="docutils literal notranslate"><span class="pre">upstream_interp</span></code><a class="headerlink" href="#module-profitroll.methods.upstream_interp" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="profitroll.methods.upstream_interp.upstream_interp">
+<code class="sig-prename descclassname">profitroll.methods.upstream_interp.</code><code class="sig-name descname">upstream_interp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alpha_x</span></em>, <em class="sig-param"><span class="n">alpha_y</span></em>, <em class="sig-param"><span class="n">F</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'linear'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">ho</span><span class="o">=</span><span class="default_value">0.15</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#profitroll.methods.upstream_interp.upstream_interp" title="Permalink to this definition">¶</a></dt>
+<dd><p>upstream_interp interpolates a multidimensionnal field F from a 2D grid to an ‘upstream’ unstructured mesh defined by the displacements alpha_x, alpha_y.     If F were a continuous field, we would have: F_int(x,y) = F(x-alpha, y-alpha)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>alpha_x</strong> (<em>ndarray</em>) – a two dimensional field of displacement along the first dimension</p></li>
+<li><p><strong>alpha_y</strong> (<em>ndarray</em>) – a two dimensional field of displacement along the second dimension</p></li>
+<li><p><strong>F</strong> (<em>ndarray</em>) – 2D-Field to be advected.         A vectorial field can be advected (the X and Y dimension should come second and third)</p></li>
+<li><p><strong>method</strong> (<em>string</em><em>, </em><em>optional</em>) – method used for the interpolation: ‘nearest’, ‘linear’, or ‘bicubic’. Defaults to ‘linear’</p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>optional</em>) – a scalar between 0 and 2. The higher the number, the more prints. Defaults to 0</p></li>
+<li><p><strong>ho</strong> (<em>int</em><em>, </em><em>optional</em>) – Distance around grid points where additional diffusion is added with the ‘damping’ method. Defaults to 0.15.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>&quot;Unknown method for interpolation&quot;</strong> – Invalid string as a method for interpolation</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>F_int: Advected field.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-profitroll.methods.wrap_advection_step_3P">
+<span id="wrap-advection-step-3p"></span><h2><code class="docutils literal notranslate"><span class="pre">wrap_advection_step_3P</span></code><a class="headerlink" href="#module-profitroll.methods.wrap_advection_step_3P" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="profitroll.methods.wrap_advection_step_3P.wrap_advection_step_3P">
+<code class="sig-prename descclassname">profitroll.methods.wrap_advection_step_3P.</code><code class="sig-name descname">wrap_advection_step_3P</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">history</span></em>, <em class="sig-param"><span class="n">grid</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">alpha_method</span></em>, <em class="sig-param"><span class="n">order_alpha</span></em>, <em class="sig-param"><span class="n">F_method</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#profitroll.methods.wrap_advection_step_3P.wrap_advection_step_3P" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap the <code class="xref py py-class docutils literal notranslate"><span class="pre">advection_step_3P</span></code> method to fit the architecture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>history</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">History</span></code> object) – Current history of state</p></li>
+<li><p><strong>grid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code> object) – Spatial grid of the simulation</p></li>
+<li><p><strong>params</strong> (<em>dictionary</em>) – Dictionary of usefull parameters</p></li>
+<li><p><strong>alpha_method</strong> (<em>str</em>) – see <code class="xref py py-class docutils literal notranslate"><span class="pre">advection_step_3P</span></code></p></li>
+<li><p><strong>order_alpha</strong> (<em>int</em>) – see <code class="xref py py-class docutils literal notranslate"><span class="pre">advection_step_3P</span></code></p></li>
+<li><p><strong>F_method</strong> (<em>str</em>) – see <code class="xref py py-class docutils literal notranslate"><span class="pre">advection_step_3P</span></code></p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>optional</em>) – verbose, defaults to 0</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-profitroll.methods.wrap_wv">
+<span id="wrap-wv"></span><h2><code class="docutils literal notranslate"><span class="pre">wrap_wv</span></code><a class="headerlink" href="#module-profitroll.methods.wrap_wv" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="profitroll.methods.wrap_wv.wrap_wv">
+<code class="sig-prename descclassname">profitroll.methods.wrap_wv.</code><code class="sig-name descname">wrap_wv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">history</span></em>, <em class="sig-param"><span class="n">grid</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">alpha_method</span></em>, <em class="sig-param"><span class="n">order_alpha</span></em>, <em class="sig-param"><span class="n">F_method</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#profitroll.methods.wrap_wv.wrap_wv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap the water vapor method to fit the architecture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>history</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">History</span></code> object) – Current history of state</p></li>
+<li><p><strong>grid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code> object) – Spatial grid of the simulation</p></li>
+<li><p><strong>params</strong> (<em>dictionary</em>) – Dictionary of usefull parameters</p></li>
+<li><p><strong>alpha_method</strong> (<em>str</em>) – see <code class="xref py py-class docutils literal notranslate"><span class="pre">advection_step_3P</span></code></p></li>
+<li><p><strong>order_alpha</strong> (<em>int</em>) – see <code class="xref py py-class docutils literal notranslate"><span class="pre">advection_step_3P</span></code></p></li>
+<li><p><strong>F_method</strong> (<em>str</em>) – see <code class="xref py py-class docutils literal notranslate"><span class="pre">advection_step_3P</span></code></p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>optional</em>) – verbose, defaults to 0</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="profitroll.test.html" class="btn btn-neutral float-right" title="test module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="profitroll.display.html" class="btn btn-neutral float-left" title="Display module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Olivier Goux, Lucas Lange, Hugo Levy, Pablo Richard, Mathieu Roule, Maxence Seymat.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
